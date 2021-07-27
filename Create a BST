@@ -1,0 +1,37 @@
+//----------------------------Shivendra Yadav---------------------------------//
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stack>
+using namespace std;
+class bstNode {
+public: 
+	    int data;
+	    bstNode *left=NULL;
+	    bstNode *right=NULL;
+};
+bstNode* getBstNode(int n) {       //---Create Node for every root==NULL
+
+    bstNode *temp= new bstNode;
+    temp->data=n;
+	return temp;
+}
+bstNode* InsertInBst(bstNode *root,int n) {
+
+    if(root==NULL)
+    	root=getBstNode(n);
+    else if( n<=root->data)
+    	root->left=InsertInBst(root->left,n);
+    else
+    	root->right=InsertInBst(root->right,n);
+ return root;
+}
+
+int main() {
+  bstNode *root=NULL;
+	root=InsertInBst(root,34);
+	InsertInBst(root,41);
+	InsertInBst(root,21);
+	InsertInBst(root,12);
+
+	return 0;
+}
