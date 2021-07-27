@@ -1,0 +1,10 @@
+
+void InOrderTravarsal(bstNode* root) {
+
+	if(root==NULL)
+		return ;
+	InOrderTravarsal(root->left);
+	cerr<<root->data<<" ";
+	InOrderTravarsal(root->right);
+}
+
